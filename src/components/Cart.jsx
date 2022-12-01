@@ -49,14 +49,21 @@ const Cart = ({ show, handleClose }) => {
                 </Link>
                 <p>{item.productsInCart.quantity}</p>
                 <p>${item.price} </p>
-                <Button
-                  style={{ borderRadius: "5px 0 5px 0", cursor: "none" }}
-                  variant="danger"
-                  className="position-absolute bottom-0 end-0"
-                  size="sm"
+
+                <div
+                  className="  position-absolute end-0 bottom-0"
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    fontSize: "10px",
+                    background: "#d9534f",
+                    color: "white",
+                    borderRadius: "5px 0 5px 0",
+                    padding: "4px",
+                  }}
                 >
-                  Total: ${item.productsInCart.quantity * item.price}
-                </Button>
+                  TOTAL: ${item.productsInCart.quantity * item.price}
+                </div>
               </ListGroupItem>
             ))}
           </ListGroup>
