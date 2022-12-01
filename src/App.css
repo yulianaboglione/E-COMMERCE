@@ -133,4 +133,26 @@ footer .social-networks a {
   text-decoration: none;
   width: 50px;
 }
-/*------------PURCHASES-----------*/
+
+.login {
+  background: #bfa6a2;
+  border-radius: 10px;
+  max-width: 400px;
+  padding: 25px;
+  width: 100%;
+  color: white;
+  margin: 0 auto;
+  margin-bottom: 2.75rem;
+}
+.login .test-data {
+  background: #d8f5fd;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 12px;
+  color: #bfa6a2;
+  text-align: center;
+}
+
+.login .test-data .field {
+  margin-bottom: 6px;
+}

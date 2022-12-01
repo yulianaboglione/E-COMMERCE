@@ -26,7 +26,17 @@ const Login = () => {
       });
   };
   return (
-    <div>
+    <div className="login">
+      <p>Welcome! Enter your email and password to continue</p>
+      <div class="test-data">
+        <h5 style={{ color: "#bfa6a2" }}>Test data</h5>
+        <div class="field">
+          <i class="fa-solid fa-envelope-circle-check"></i> max@gmail.com
+        </div>
+        <div class="field">
+          <i class="fa-solid fa-lock"></i> pass1234
+        </div>
+      </div>
       <Form
         onSubmit={handleSubmit(submit)}
         style={{ maxWidth: 500, margin: "0 auto" }}

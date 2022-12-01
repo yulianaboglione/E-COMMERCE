@@ -4,13 +4,18 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cart from "./Cart";
 const NavBar = () => {
+  const navigate = useNavigate();
   const [show, setShow] = useState(true);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const logout = () => {
+    localStorage.setItem("token", "");
+    navigate("/login");
+  };
 
   return (
     <div>
@@ -30,6 +35,9 @@ const NavBar = () => {
               </Nav.Link>
               <Nav.Link onClick={handleShow}>
                 <i className="fa-solid fa-cart-shopping fa-lg"></i>
+              </Nav.Link>
+              <Nav.Link onClick={logout}>
+                <i class="fa-solid fa-right-from-bracket fa-lg"></i>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
