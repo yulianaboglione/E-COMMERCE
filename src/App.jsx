@@ -10,6 +10,7 @@ import Purchases from "./pages/Purchases";
 import "./App.css";
 import { useSelector } from "react-redux";
 import { Container } from "react-bootstrap";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 function App() {
   const isLoading = useSelector((state) => state.isLoading);
 
@@ -21,7 +22,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductsDetail />} />
-          <Route path="/purchases" element={<Purchases />} />
+
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/purchases" element={<Purchases />} />
+          </Route>
+
           <Route path="/login" element={<Login />} />
         </Routes>
       </Container>
