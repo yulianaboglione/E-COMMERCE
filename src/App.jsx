@@ -11,6 +11,7 @@ import "./App.css";
 import { useSelector } from "react-redux";
 import { Container } from "react-bootstrap";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import Footer from "./components/Footer";
 function App() {
   const isLoading = useSelector((state) => state.isLoading);
 
@@ -18,6 +19,7 @@ function App() {
     <HashRouter>
       {isLoading && <LoadingScreen />}
       <NavBar />
+
       <Container className="mt-5">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -30,6 +32,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       </Container>
+      <Footer />
     </HashRouter>
   );
 }

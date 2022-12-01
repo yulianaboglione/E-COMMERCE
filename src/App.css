@@ -104,4 +104,33 @@
   }
 }
 
+footer {
+  background: #d9534f;
+  padding: 2rem;
+  position: relative;
+  margin-top: 1rem;
+}
+footer .copyright {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: white;
+}
+
+footer .social-networks {
+  text-align: center;
+}
+footer .social-networks a {
+  background: #bfa6a2;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 1.4rem;
+  height: 50px;
+  line-height: 2.45;
+  margin: 0 10px;
+  text-decoration: none;
+  width: 50px;
+}
 /*------------PURCHASES-----------*/
