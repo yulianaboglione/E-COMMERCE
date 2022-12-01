@@ -40,6 +40,17 @@ export const ckeckoutThunk = () => (dispatch) => {
     .then(() => dispatch(setCart([])))
     .finally(() => dispatch(setIsLoading(false)));
 };
+
+export const deleteThunkId = (id) => (dispatch) => {
+  dispatch(setIsLoading(true));
+  return axios
+    .delete(
+      `https://e-commerce-api.academlo.tech/api/v1/cart/${id}`,
+      getConfig()
+    )
+    .then((res) => dispatch(getCartThunk()))
+    .finally(() => dispatch(setIsLoading(false)));
+};
 export const { setCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

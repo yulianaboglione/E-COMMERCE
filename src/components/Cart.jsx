@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Button, ListGroup, ListGroupItem, Offcanvas } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { ckeckoutThunk, getCartThunk } from "../store/slices/cart.slice";
+import {
+  ckeckoutThunk,
+  deleteThunkId,
+  getCartThunk,
+} from "../store/slices/cart.slice";
 
 const Cart = ({ show, handleClose }) => {
   const dispatch = useDispatch();
@@ -49,6 +53,22 @@ const Cart = ({ show, handleClose }) => {
                 </Link>
                 <p>{item.productsInCart.quantity}</p>
                 <p>${item.price} </p>
+                <Button
+                  style={{
+                    background: "none",
+                    color: "white",
+                  }}
+                  onClick={() => dispatch(deleteThunkId(item.id))}
+                >
+                  <i
+                    className="fa-solid fa-trash-can  fa-sm position-absolute end-0 top-0"
+                    style={{
+                      padding: "10px",
+                      borderRadius: "0 5px 0 5px",
+                      background: "#d9534f",
+                    }}
+                  ></i>
+                </Button>
 
                 <div
                   className="  position-absolute end-0 bottom-0"
